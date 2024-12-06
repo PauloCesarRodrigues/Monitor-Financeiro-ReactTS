@@ -1,7 +1,9 @@
+ 
 /* eslint-disable react-refresh/only-export-components */
 
-import { createContext, useEffect, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { api } from "../lib/axios";
+import { createContext } from "use-context-selector";
 
 interface Transaction{
   id: number,
@@ -37,36 +39,42 @@ export function TransactionsProvider({ children } : TransactionsProviderProps){
 
   const [transactions, setTransatcions] = useState<Transaction[]>([])
 
-  async function fetchTransactions(query?: string){
+  const fetchTransactions = useCallback(
+    async (query?: string)=>{
 
-    const response = await api.get('transactions', {
-      params: {
-        _sort: 'createdAt',
-        _order: 'desc',
-        q: query,
-      }
-    })
-
-    setTransatcions(response.data)
-  }
+      const response = await api.get('transactions', {
+        params: {
+          _sort: 'createdAt',
+          _order: 'desc',
+          q: query,
+        }
+      })
   
-  async function createTransactions(data: CreateTransactionInput){
-    const {category, description, price, type} = data;
+      setTransatcions(response.data)
+    },
+    []  
+  );
 
-    const response = await api.post('transactions',{
-      category,
-      description,
-      price,
-      type,
-      createdAt: new Date(),
-    })
-
-    setTransatcions(state => [response.data, ...state])
-  }
+  const createTransactions = useCallback(
+    async (data: CreateTransactionInput)=>{
+      const {category, description, price, type} = data;
+  
+      const response = await api.post('transactions',{
+        category,
+        description,
+        price,
+        type,
+        createdAt: new Date(),
+      })
+  
+      setTransatcions(state => [response.data, ...state])
+    },
+    []
+  )
 
   useEffect(()=>{
     fetchTransactions()
-  },[])
+  },[fetchTransactions])
 
   return(
     <TransactionsContext.Provider value={{ transactions, fetchTransactions, createTransactions }}> 

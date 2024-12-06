@@ -1,14 +1,14 @@
-import { useContext} from "react";
 import { Header } from "../../components/Header";
 import { Summary } from "../../components/Summary";
 import { SearchForm } from "./components/SeachForm";
 import { PriceHighlight, TransactionsContainer, TrasactionsTable } from "./styles";
 import { TransactionsContext } from "../../contexts/TransactionsContext";
 import { dateFormatter, priceFormatter } from "../../utils/formatter";
+import { useContextSelector } from "use-context-selector";
 
 export function Transactions(){
 
-  const { transactions } = useContext(TransactionsContext)
+  const  transactions  = useContextSelector(TransactionsContext, (context)=> context.transactions)
 
   return(
     <div>
@@ -27,7 +27,7 @@ export function Transactions(){
                 <td>
                   <PriceHighlight variant={transaction.type}>
                     {transaction.type === 'outcome' && '- '}
-                    {priceFormatter.format(transaction.price)}
+                    {priceFormatter.format(transaction.price)} 
                   </PriceHighlight>
                 </td>
                 <td>{transaction.category}</td>
