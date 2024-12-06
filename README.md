@@ -9,6 +9,10 @@ Uma aplicação para gerenciar suas finanças pessoais, permitindo registrar ent
 - useMemo e useCallback: Implementados para otimizar a performance em componentes e evitar re-renderizações desnecessárias.
 - Styled-Components para estilização
 
+## 🚀 Link para visualizar a parte visual NÃO FUNCIONAL
+[Acesse aqui a versão online](https://monitor-financeiro-react-ts.vercel.app/)
+
+
 ## 🛠️ Como Rodar o Projeto
 
 Siga os passos abaixo para rodar a aplicação localmente:
@@ -39,16 +43,6 @@ npm run dev
 ```bash
 npm run dev:server
 ```
-
-## 🚀 Link para visualizar a parte visual NÃO FUNCIONAL
-[Acesse aqui a versão online](https://monitor-financeiro-react-ts.vercel.app/)
-
-#Screenshot da aplicação rodando localmente:
-![image](https://github.com/user-attachments/assets/4c2ef3a6-1600-4bb3-ad19-b3e13f0c15d4)
-
-#Screen shot da criação de transação:
-![image](https://github.com/user-attachments/assets/b75e64c3-498f-4a54-b569-88c945062afd)
-
 
 
 ## 🤝 Contribuições
