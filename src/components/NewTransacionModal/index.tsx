@@ -33,7 +33,7 @@ export function NewTransactionModal(){
   })
 
   async function handleCreateNewTransactions(data: newTransactionFormInputs){
-    return alert('Feature desatiavada para a públicação no github e deixar o repositório público')
+    return alert('Feature desativada para a públicação no github e deixar o repositório público')
     const {description, price, category, type} = data;
 
     await createTransactions({
