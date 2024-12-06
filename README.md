@@ -9,7 +9,7 @@ Uma aplicação para gerenciar suas finanças pessoais, permitindo registrar ent
 - useMemo e useCallback: Implementados para otimizar a performance em componentes e evitar re-renderizações desnecessárias.
 - Styled-Components para estilização
 
-## 🚀 Link para visualizar a parte visual NÃO FUNCIONAL
+## 🚀 Link para visualizar o projeto
 [Acesse aqui a versão online](https://monitor-financeiro-react-ts.vercel.app/)
 
 
