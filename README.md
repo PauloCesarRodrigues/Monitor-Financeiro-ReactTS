@@ -11,7 +11,7 @@ Uma aplicação para gerenciar suas finanças pessoais, permitindo registrar ent
 
 ## 🚀 Link para visualizar o projeto
 [Acesse aqui a versão online](https://monitor-financeiro-react-ts.vercel.app/)
-Feature de adicionar nova transação desatiavada para a públicação no github e deixar o repositório público.
+- Feature de adicionar nova transação desativada para a públicação no github e deixar o repositório público.
 
 
 ## 🛠️ Como Rodar o Projeto
@@ -47,7 +47,7 @@ npm run dev:server
 
 ###4. Retirar a proteção
  Acesse a pasta NewTransactionModal -> index.tsx
- Depois retire a linha 36: return alert('Feature desatiavada para a públicação no github e deixar o repositório público')
+ Depois retire a linha 36: return alert('Feature desativada para a públicação no github e deixar o repositório público')
 
 ## 🤝 Contribuições
 
